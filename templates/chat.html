@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <!-- CHAT -->
+    <h1>Chat</h1>
+    <div class="row">
+        <div class="col-3" style="background-color: #37daf7">
+            <form>
+                <br>
+                <h3 id="displayname">Type in Your Name</h3>
+                <div>
+                    <input class="form-control" id="disp_username" placeholder="Display Username">
+                    <br>
+                    <button class="btn btn-primary" onclick="disp_name()" type="submit">Submit</button>
+                    <br>
+                </div>
+            </form>
+            <form>
+                <h3>Create a New Channel</h3>
+                <div class="form-group">
+                    <input id="channel_input" class="form-control" text="text" placeholder="Create a New Channel">
+                </div>
+                <div class="form-group">
+                    <button id="button_create" class="btn btn-primary" type="button">Create Channel</button>
+                </div>
+            </form>
+            <div>
+                <br>
+                <h3>Select a Channel</h3>
+                <select id="chn_name" class="form-controls"></select>
+                <br>
+            </div>
+        </div>
+        <div class="col-9">
+            <form>
+                <div class="form-group">
+                    <input id="message_box" class="form-control" placeholder="Type a Message..."/>
+                </div>
+                <div class="form-group">
+                    <button id="message_submit" class="btn btn-primary" type="button">Send a Message...</button>
+                </div>
+            </form>
+            <ul id="msgs_sent">
+            </ul>
+            <div id="totalmsgs"></div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <center><h1>Resources</h1></center>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+            <center><h3>BBC World Service</h3></center>
+                {% for retrieve in rd %}
+                    <h6>Title: <a href="{{ retrieve.url }}">{{ retrieve.title }}</a></h6>
+                    <h6>Description: {{ retrieve.description }}</h6>
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="col-6">
+            <center><h3>The New York Times</h3></center>
+                {% for retrieve in rd2 %}
+                    <h6>Title: <a href="{{ retrieve.url }}">{{ retrieve.title }}</a></h6>
+                    <h6>Description: {{ retrieve.description }}</h6>
+                    <br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

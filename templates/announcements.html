@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <!-- ANNOUNCEMENTS -->
+    <center><h2>Below, access your calendar to see if you can attend!</h2></center>
+    <center><button id="authorize_button" style="display: none;" class="btn btn-secondary btn-lg btn-block">Authorize</button></center>
+    <center><button id="signout_button" style="display: none;" class="btn btn-secondary btn-lg btn-block">Sign Out</button></center>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Event</th>
+                <th scope="col">Date</th>
+                <th scope="col">Add Event</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>South Eastern Highschool Model UN</td>
+                <td>November 16, 2018</td>
+                <td><button id="create_event" class="btn btn-primary">Add Event</button></td>
+            </tr>
+            <tr>
+                <td>Volunteer Model UN</td>
+                <td>February 16, 2018</td>
+                <td><button id="create_event2" class="btn btn-primary">Add Event</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <pre id="content"></pre>
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+{% endblock %}
